@@ -1,0 +1,25 @@
+one:
+  user_id: 1
+  voteable_type: "Movie"
+  contest_id: 1
+  voteable_id: 1
+  vote: true
+
+two:
+  user_id: 2
+  voteable_type: "Movie"
+  contest_id: 1
+  voteable_id: 2
+  vote: true
+three:
+  user_id: 3
+  voteable_type: "Movie"
+  contest_id: 1
+  voteable_id: 1
+  vote: true
+four:
+  user_id: 1
+  voteable_type: "Movie"
+  contest_id: 2
+  voteable_id: 2
+  vote: true

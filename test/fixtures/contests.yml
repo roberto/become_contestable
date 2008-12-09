@@ -1,0 +1,14 @@
+one:
+  name: Contest 1
+  description: Desc 1
+  nominating: false
+
+two:
+  name: Contest 2
+  description: Desc 2
+  nominating: true
+
+three:
+  name: Contest 3
+  description: Desc 3
+  nominating: true
