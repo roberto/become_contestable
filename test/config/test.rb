@@ -8,7 +8,7 @@ require 'test/unit'
 
 require File.expand_path(File.join(ENV['RAILS_ROOT'], 'config/environment.rb'))
 
-# RAILS_DEFAULT_LOGGER = Logger.new(“#{RAILS_ROOT}/log/#{RAILS_ENV}.log”)
+# RAILS_DEFAULT_LOGGER = Logger.new("#{RAILS_ROOT}/log/#{RAILS_ENV}.log")
 
 require "active_support"
 require "active_support/test_case"

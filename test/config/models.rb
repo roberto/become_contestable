@@ -37,10 +37,10 @@ ActiveRecord::Schema.define do
 end
 
 class User < ActiveRecord::Base
-  acts_as_voter
+  become_voter
 end
 
 class Movie < ActiveRecord::Base
-  acts_as_contestable
+  become_contestable
 end
 
