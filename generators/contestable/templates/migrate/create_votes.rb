@@ -7,6 +7,10 @@ class CreateVotes < ActiveRecord::Migration
       t.datetime :created_at
       t.integer :contest_id      
     end
+    
+    add_index :votes, ["voter_id", "voter_type"], :name => "fk_voters"
+    add_index :votes, ["voteable_id", "voteable_type"], :name => "fk_voteables"
+    add_index :votes, :contest_id
   end
 
   def self.down
