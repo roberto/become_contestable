@@ -6,6 +6,8 @@ require "active_record"
 require "active_record/fixtures"
 require "active_record/test_case"
 
+Test::Unit::TestCase.fixture_path = FIXTURES_ROOT
+
 class ActiveRecord::TestCase #:nodoc:
   self.use_transactional_fixtures = true
   self.use_instantiated_fixtures  = false

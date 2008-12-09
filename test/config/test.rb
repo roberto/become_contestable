@@ -12,9 +12,6 @@ require File.expand_path(File.join(ENV['RAILS_ROOT'], 'config/environment.rb'))
 
 require "active_support"
 require "active_support/test_case"
-require 'active_record/fixtures'
-
-Test::Unit::TestCase.fixture_path = FIXTURES_ROOT
 
 
 require File.dirname(__FILE__) + '/active_record.rb'
@@ -22,3 +19,5 @@ require File.dirname(__FILE__) + '/action_pack.rb'
 
 require File.dirname(__FILE__) + '/models.rb'
 require File.dirname(__FILE__) + '/controllers.rb'
+
+require File.dirname(__FILE__) + '/mini_shoulda.rb'
