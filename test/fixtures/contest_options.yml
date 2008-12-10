@@ -1,0 +1,14 @@
+one:
+  contest_id: 1
+  contest_type: Contest
+  nominating: false
+
+two:
+  contest_id: 2
+  contest_type: Contest
+  nominating: true
+
+three:
+  contest_id: 3
+  contest_type: Contest
+  nominating: true

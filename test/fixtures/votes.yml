@@ -3,6 +3,7 @@ one:
   voter_type: User
   voteable_type: Movie
   contest_id: 1
+  contest_type: Contest
   voteable_id: 1
   vote: true
 
@@ -11,6 +12,7 @@ two:
   voter_type: User
   voteable_type: Movie
   contest_id: 1
+  contest_type: Contest
   voteable_id: 2
   vote: true
 three:
@@ -18,6 +20,7 @@ three:
   voter_type: User
   voteable_type: Movie
   contest_id: 1
+  contest_type: Contest
   voteable_id: 1
   vote: true
 four:
@@ -25,5 +28,6 @@ four:
   voter_type: User
   voteable_type: Movie
   contest_id: 2
+  contest_type: Contest
   voteable_id: 2
   vote: true

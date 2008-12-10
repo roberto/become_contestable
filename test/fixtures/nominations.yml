@@ -2,8 +2,10 @@ one:
   nominatable_type: Movie
   nominatable_id: 2
   contest_id: 2
+  contest_type: Contest
 
 two:
   nominatable_type: Movie
   nominatable_id: 3
-  contest_id: 2
+  contest_id: 3
+  contest_type: Contest
