@@ -1,14 +1,17 @@
 one:
   contest_id: 1
   contest_type: Contest
-  nominating: false
+  by_nomination: false
+  max_allowed_winners: 2
 
 two:
   contest_id: 2
   contest_type: Contest
-  nominating: true
+  by_nomination: true
+  max_allowed_winners: 1
 
 three:
   contest_id: 3
   contest_type: Contest
-  nominating: true
+  by_nomination: true
+  max_allowed_winners: 0
