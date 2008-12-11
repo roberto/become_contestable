@@ -5,15 +5,24 @@ module BecomeContestable
   end 
 
   module ActMethods
-    def become_contestable
+    def contestable_on(association, options = {})
       has_many :votes, :as => :voteable
-      has_many :nominations, :as => :nominatable
+      
+      options[:association] = association.to_sym
+      contest_class = reflect_on_association(options[:association]).class_name
+      options[:contest_class] = contest_class
+      
       
       unless included_modules.include? InstanceMethods 
+        class_inheritable_accessor :contestable_options
         extend ClassMethods 
         include InstanceMethods 
       end
+      
+      
+      self.contestable_options = options 
     end
+    
     
     module InstanceMethods
 
