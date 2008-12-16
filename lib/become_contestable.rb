@@ -25,6 +25,10 @@ module BecomeContestable
     
     
     module InstanceMethods
+      
+      def contest
+        send(self.class.contestable_options[:association])
+      end
 
     end
 

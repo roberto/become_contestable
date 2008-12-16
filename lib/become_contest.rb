@@ -23,8 +23,19 @@ module BecomeContest
     
     module InstanceMethods
       
-      def top(length = 10)
+      def vote_for(voteable, options = {})
+        self.vote(voteable, true)
+      end
+      
+      def vote_against(voteable, options = {})
+        self.vote(voteable, false)
+      end
+
+      def vote(voteable, vote, options = {})
+        voter = options[:voter] || options[:by]
         
+        vote = self.votes.build(:vote => vote, :voteable => voteable, :voter => voter)
+        vote.save
       end
     end
 

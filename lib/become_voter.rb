@@ -7,7 +7,7 @@ module BecomeVoter
   module ActMethods
     
     def become_voter
-      has_many :votes
+      has_many :votes, :as => :voter
             
       unless included_modules.include? InstanceMethods
         extend ClassMethods 
@@ -26,9 +26,32 @@ module BecomeVoter
       end
 
       def vote(voteable, vote, options = {})
-        vote = self.votes.build(:vote => vote, :voteable => voteable, :contest => options[:on])
+        contest = options[:contest] || options[:on]
+        
+        vote = self.votes.build(:vote => vote, :voteable => voteable, :contest => contest)
         vote.save
-      end        
+      end
+      
+      
+      def voted_for?(voteable, options = {})
+        voted?(voteable, true, options = {})
+      end
+
+       def voted_against?(voteable, options = {})
+         voted?(voteable, false, options = {})
+       end
+
+       def voted_on?(voteable, options = {})
+         contest = options[:contest] || options[:on] || voteable.contest
+                  0 < self.votes.count(:all, :conditions => {:contest_id => contest.id, :contest_type => contest.class.name, :voteable_id => voteable.id, :voteable_type => voteable.class.name})
+       end  
+       
+       def voted?(voteable, for_or_against, options = {})
+         contest = options[:contest] || options[:on] || voteable.contest
+         0 < self.votes.count(:all, :conditions => {:contest_id => contest.id, :contest_type => contest.class.name, :vote => for_or_against, :voteable_id => voteable.id, :voteable_type => voteable.class.name})
+       end 
+       
+       private :voted?
     end
 
     module ClassMethods
