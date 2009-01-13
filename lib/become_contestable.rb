@@ -8,7 +8,7 @@ module BecomeContestable
     def contestable_on(association, options = {})
       has_many :votes, :as => :voteable
       
-      attr_readonly :votes_count if self.column_names.include?("votes_count")
+      attr_readonly :votes_count if self.table_exists? && self.column_names.include?("votes_count")
       
       options[:association] = association.to_sym
       contest_class = reflect_on_association(options[:association]).class_name
