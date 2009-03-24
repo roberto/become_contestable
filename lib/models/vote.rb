@@ -6,12 +6,12 @@ class Vote < ActiveRecord::Base
   
   
   def counter_cache_after_create_for_voteable
-    voteable.class.increment_counter(:votes_count, voteable.id) if voteable.class.column_names.include?("votes_count") && !voteable.nil?
+    voteable.class.increment_counter(:votes_count, voteable.id) if !voteable.nil? && voteable.class.column_names.include?("votes_count")
   end
   after_create :counter_cache_after_create_for_voteable
   
   def counter_cache_before_destroy_for_voteable
-    voteable.class.decrement_counter(:votes_count, voteable.id) if voteable.class.column_names.include?("votes_count") && !voteable.nil?
+    voteable.class.decrement_counter(:votes_count, voteable.id) if !voteable.nil? && voteable.class.column_names.include?("votes_count")
   end
   before_destroy :counter_cache_before_destroy_for_voteable
   
