@@ -24,11 +24,11 @@ module BecomeContest
     module InstanceMethods
       
       def vote_for(voteable, options = {})
-        self.vote(voteable, true)
+        self.vote(voteable, true, options)
       end
       
       def vote_against(voteable, options = {})
-        self.vote(voteable, false)
+        self.vote(voteable, false, options)
       end
 
       def vote(voteable, vote, options = {})
